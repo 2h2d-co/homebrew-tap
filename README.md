@@ -1,6 +1,6 @@
 # 2h2d-co Homebrew Tap
 
-Company-wide Homebrew tap for 2h2d-co tools.
+Homebrew tap for [2h2d.co](https://www.2h2d.co) tools.
 
 ## Install
 
