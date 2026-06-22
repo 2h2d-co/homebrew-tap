@@ -4,11 +4,13 @@ class BrewSafe < Formula
   url "https://github.com/2h2d-co/homebrew-safe/releases/download/v0.1.0/brew-safe_0.1.0.tar.gz"
   sha256 "34f96537efced7d371593d0faa67b790cc51613d87e96c3711faee675ef326c2"
   license "MIT"
+  revision 1
 
   def install
     libexec.install "cmd", "lib"
 
     (bin/"brew-safe-outdated.rb").write <<~RUBY
+      #!/usr/bin/env ruby
       # frozen_string_literal: true
 
       #:
@@ -21,6 +23,7 @@ class BrewSafe < Formula
     RUBY
 
     (bin/"brew-safe-upgrade.rb").write <<~RUBY
+      #!/usr/bin/env ruby
       # frozen_string_literal: true
 
       #:
