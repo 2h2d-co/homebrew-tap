@@ -1,9 +1,9 @@
 class Dots < Formula
   desc "Minimal, copy-based dotfiles manager"
   homepage "https://github.com/2h2d-co/dots"
-  url "https://github.com/2h2d-co/dots/releases/download/v0.0.1/dots_0.0.1_darwin_arm64.tar.gz"
-  version "0.0.1"
-  sha256 "753f474fdf9236a3c0fe05c7eb11c3bbdc2190d0073e6e03ba0ee968cf09793a"
+  url "https://github.com/2h2d-co/dots/releases/download/v0.0.5/dots_0.0.5_darwin_arm64.tar.gz"
+  version "0.0.5"
+  sha256 "1ab4b3af5df4c842cc5e8fe43a9e375e5179f3cd3831ee9ecc4a4463ed98b68f"
   license "MIT"
 
   depends_on arch: :arm64
