@@ -1,9 +1,9 @@
 class Cage < Formula
   desc "Load 1Password Environments with age-protected service account tokens"
   homepage "https://github.com/2h2d-co/cage"
-  url "https://github.com/2h2d-co/cage/releases/download/v0.0.9/cage_0.0.9_darwin_arm64.tar.gz"
-  version "0.0.9"
-  sha256 "be924e534f77fea8b5fceccd0f518e329fb1cd86dc1dd1d719e80a020036a0df"
+  url "https://github.com/2h2d-co/cage/releases/download/v0.0.10/cage_0.0.10_darwin_arm64.tar.gz"
+  version "0.0.10"
+  sha256 "815a74cc3f2511772c64008ee879d091b0055071b6d009fea979f9c8ef1b19f3"
   license "MIT"
 
   depends_on arch: :arm64
