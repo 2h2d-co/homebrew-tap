@@ -2,6 +2,7 @@
 lockfile = true
 locked = true
 minimum_release_age = "7d"
+ruby.compile = false
 
 [tools]
 hk = { version = "1.51.0", postinstall = "hk install --mise" }
