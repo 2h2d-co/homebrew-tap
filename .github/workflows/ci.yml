@@ -13,13 +13,34 @@ jobs:
     name: Check formulae
     runs-on: macos-15
     steps:
-      - uses: actions/checkout@df4cb1c069e1874edd31b4311f1884172cec0e10 # v6
+      - name: Set up Homebrew
+        id: set-up-homebrew
+        uses: Homebrew/actions/setup-homebrew@fd832223f9f99ebf0244dd20658680e5d4aca049 # 2026.08.03.2
         with:
-          persist-credentials: false
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Cache Homebrew Bundler RubyGems
+        uses: actions/cache@55cc8345863c7cc4c66a329aec7e433d2d1c52a9 # v6.1.0
+        with:
+          path: ${{ steps.set-up-homebrew.outputs.gems-path }}
+          key: ${{ runner.os }}-rubygems-${{ steps.set-up-homebrew.outputs.gems-hash }}
+          restore-keys: ${{ runner.os }}-rubygems-
       - uses: jdx/mise-action@e6a8b3978addb5a52f2b4cd9d91eafa7f0ab959d # v4.2.0
         with:
-          version: "2026.6.14"
+          version: "2026.8.0"
           install_args: --locked
           cache: false
-      - run: hk check --all --check
-      - run: brew style Formula/*.rb
+      - name: Run shared checks
+        run: hk check --all --check
+      - name: Prepare Homebrew test environment
+        run: |
+          brew test-bot --only-cleanup-before
+          brew test-bot --only-setup
+      - name: Check tap syntax
+        run: brew test-bot --only-tap-syntax
+      - name: Audit formulae
+        env:
+          TAP_NAME: ${{ steps.set-up-homebrew.outputs.tap-name }}
+        run: brew audit --strict --tap="$TAP_NAME"
+      - name: Test changed formulae
+        if: github.event_name == 'pull_request'
+        run: brew test-bot --only-formulae
