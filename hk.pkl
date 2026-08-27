@@ -1,7 +1,7 @@
-amends "package://github.com/2h2d-co/hk-config/releases/download/v0.7.0/hk-config@0.7.0#/Config.pkl"
+amends "package://github.com/2h2d-co/hk-config/releases/download/v0.8.0/hk-config@0.8.0#/Config.pkl"
 
-import "package://github.com/2h2d-co/hk-config/releases/download/v0.7.0/hk-config@0.7.0#/Base.pkl" as Base
-import "package://github.com/2h2d-co/hk-config/releases/download/v0.7.0/hk-config@0.7.0#/GitHubActions.pkl" as GitHubActions
+import "package://github.com/2h2d-co/hk-config/releases/download/v0.8.0/hk-config@0.8.0#/Base.pkl" as Base
+import "package://github.com/2h2d-co/hk-config/releases/download/v0.8.0/hk-config@0.8.0#/GitHubActions.pkl" as GitHubActions
 
 local projectSteps = (Base.baseSteps) {
   ...GitHubActions.gitHubActionsSteps
