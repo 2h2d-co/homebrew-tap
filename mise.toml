@@ -11,3 +11,10 @@ cocogitto = "7.0.0"
 actionlint = "1.7.12"
 zizmor = "1.29.0"
 ruby = "4.0.6"
+
+[tasks.check]
+description = "Run local hygiene and formula style checks; CI audits the installed tap"
+run = [
+  "hk check --all --check",
+  "HOMEBREW_NO_AUTO_UPDATE=1 brew style Formula/*.rb",
+]
