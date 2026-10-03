@@ -4,8 +4,11 @@ updates:
     directory: /
     schedule:
       interval: daily
+    # Dependabot measures action cooldowns from the tagged commit's date. Homebrew/actions tags
+    # its weekly release about three days after that commit, so 10 days keeps proposals at least
+    # 7 days after each release.
     cooldown:
-      default-days: 7
+      default-days: 10
     commit-message:
       prefix: ci
       include: scope
