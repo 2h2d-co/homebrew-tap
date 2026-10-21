@@ -1,8 +1,8 @@
 class BrewSafe < Formula
   desc "Release-age-gated Homebrew install, outdated, and upgrade commands"
   homepage "https://github.com/2h2d-co/homebrew-safe"
-  url "https://github.com/2h2d-co/homebrew-safe/releases/download/v0.2.3/brew-safe_0.2.3.tar.gz"
-  sha256 "0ef999172da67b92e63c4c3f5f7981a42fac13abdc064900342edfa3c01c2ae3"
+  url "https://github.com/2h2d-co/homebrew-safe/releases/download/v0.2.4/brew-safe_0.2.4.tar.gz"
+  sha256 "6ceefaecbf09a8842bb319de2e0d564f34b232a229ac26ad241d8af6903f9be1"
   license "MIT"
 
   def install
