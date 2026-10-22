@@ -12,6 +12,7 @@ jobs:
   check:
     name: Check formulae
     runs-on: macos-15
+    timeout-minutes: 10
     permissions:
       actions: read # Required by brew test-bot to inspect workflow artifacts.
       checks: read # Required by brew test-bot to inspect check runs.
